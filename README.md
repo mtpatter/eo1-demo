@@ -31,9 +31,9 @@ corrected radiance value recorded at each pixel. Here we will show you how to us
 We will take a look at an example ALI GeoTiff from band 3, covering 0.45 - 0.515 micron. 
 Our data resides in the /glusterfs/osdc_public_data/eo1 directory.  In the terminal, type:
 
-'''
+```
 python viewGeoTiff.py /glusterfs/osdc_public_data/eo1/ali_l1g/2014/029/EO1A1930292014029110PZ_ALI_L1G/EO1A1930292014029110PZ_B03_L1T.TIF
-'''
+```
 
 ## Making an RGB Image
 Here we will create an RGB image from three bands of an individual ALI scene. 
@@ -43,23 +43,23 @@ we tell the script to scale each color up by a factor of 2.
 
 In the terminal, type in:
 
-'''
+```
 python makeRGB.py 2014 029 EO1A1930292014029110PZ italy.png 2
-'''
+```
 
 To download this image to your local machine for viewing is a two-step process.
 First, move the file to your gluster user directory on Sullivan
 by typing the following into your VM terminal:
 
-'''
+```
 mv italy.png /glusterfs/users/USERNAME/
-'''
+```
 
 Then, in the terminal on your local machine, download the file into the preferred directory:
 
-'''
+```
 scp USERNAME@sullivan.opensciencedatacloud.org:~/italy.png .
-'''
+```
 
 Now take a look at your picture using your favorite image viewer.
 Looks like a nice spot to run our classifier. This is a section of the Italian coast near Pisa.
@@ -76,9 +76,9 @@ ALI bands, which are used by the classifier described.
 
 You can run the classifier with the following command:
 
-'''
+```
 python classify.py 2014 029 EO1A1930292014029110PZ italyClassified.tif
-'''
+```
 
 It will take about 10 minutes to run, so go get a snack or some coffee. You 
 can also look at the classified GeoTiff we have provided using the above procedure.
@@ -89,9 +89,9 @@ can also look at the classified GeoTiff we have provided using the above procedu
 Let's take a look at the GeoTiff created. Run viewClassifiedTiff.py on the file
 made by the classification:
 
-'''
+```
 python viewClassifiedTiff.py italyClassified.tif italyClassified.png
-'''
+```
 
 You can download italyClassified.png to your local machine using the instructions 
 above in 'Making an RGB image.'
